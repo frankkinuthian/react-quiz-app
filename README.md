@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ### `pnpm run server`
 
 Runs the app json data server in the development mode.\
-Open [http://localhost:8000](http://localhost:8000) to view it in your browser.
+Open [http://localhost:8000/questions](http://localhost:8000/questions) to view data in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
