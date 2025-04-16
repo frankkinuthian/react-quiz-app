@@ -1,76 +1,100 @@
-# Getting Started with Create React App
+# React Quiz Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A dynamic quiz application built with React that demonstrates advanced state management using `useReducer`. The app features a timer, progress tracking, and score management.
+
+## Features
+
+- 🎯 Interactive quiz interface
+- ⏱️ Timer with 30 seconds per question
+- 📊 Progress tracking
+- 🏆 Highscore system
+- 🔄 Restart functionality
+- 📱 Responsive design
+
+## Technical Implementation
+
+### State Management with useReducer
+
+The application leverages React's `useReducer` hook for complex state management, handling various actions such as:
+
+- Quiz state transitions (loading → ready → active → finished)
+- Answer validation
+- Score calculation
+- Timer management
+- Progress tracking
+
+This approach provides a more maintainable and scalable solution compared to multiple `useState` hooks, especially for complex state transitions and related state updates.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- pnpm (Package Manager)
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+pnpm install
+```
+
+### Running the Application
+
+You'll need to run both the development server and the JSON server in separate terminals:
+
+1. Start the React development server:
+
+```bash
+pnpm start
+```
+
+Access the application at [http://localhost:3000](http://localhost:3000)
+
+2. Start the JSON server (for quiz questions):
+
+```bash
+pnpm run server
+```
+
+The quiz data will be available at [http://localhost:8000/questions](http://localhost:8000/questions)
+
+## Project Structure
+
+Key components:
+
+- `App.js` - Main component with reducer logic
+- `Question.js` - Displays individual questions
+- `Timer.js` - Handles countdown functionality
+- `Progress.js` - Shows quiz progress
+- `FinishScreen.js` - Displays final score and highscore
+- `Options.js` - Renders answer options
+
+## State Management Details
+
+The application uses a reducer with the following main actions:
+
+- `dataReceived` - Handles initial quiz data loading
+- `start` - Initiates the quiz
+- `newAnswer` - Processes user answers
+- `nextQuestion` - Moves to next question
+- `finish` - Completes the quiz
+- `restart` - Resets the quiz
+- `tick` - Updates the timer
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `pnpm start` - Runs the React application
+- `pnpm run server` - Starts the JSON server for quiz data
+- `pnpm run build` - Creates a production build
+- `pnpm test` - Runs the test suite
 
-### `pnpm start`
+## Contributing
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Feel free to submit issues and enhancement requests!
 
-### `pnpm run server`
+## License
 
-Runs the app json data server in the development mode.\
-Open [http://localhost:8000/questions](http://localhost:8000/questions) to view data in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# react-quiz-app" 
+This project is licensed under the MIT License - see the LICENSE file for details.
