@@ -61,6 +61,66 @@ pnpm run server
 
 The quiz data will be available at [http://localhost:8000/questions](http://localhost:8000/questions)
 
+## Deployment
+
+### Deploying to Netlify
+
+1. Create a GitHub repository and push your code:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin your-repo-url
+git push -u origin main
+```
+
+2. Sign up/Login to [Netlify](https://www.netlify.com/)
+
+3. Deploy using one of these methods:
+
+#### Method 1: Netlify UI
+
+1. Click "New site from Git"
+2. Choose your GitHub repository
+3. Configure build settings:
+   - Build command: `pnpm run build`
+   - Publish directory: `build`
+4. Click "Deploy site"
+
+#### Method 2: Netlify CLI
+
+1. Install Netlify CLI:
+
+```bash
+npm install -g netlify-cli
+```
+
+2. Login to Netlify:
+
+```bash
+netlify login
+```
+
+3. Initialize and deploy:
+
+```bash
+netlify init
+netlify deploy --prod
+```
+
+### Important Notes for Deployment
+
+1. The JSON server won't work on Netlify (it's for development only). For production:
+
+   - Consider using a hosted API service
+   - Or migrate to a serverless function using Netlify Functions
+   - Or use a static JSON file for simple implementations
+
+2. Environment variables:
+   - Set them in Netlify's UI: Site settings → Build & deploy → Environment
+   - Or use `.env` files locally (don't commit sensitive data)
+
 ## Project Structure
 
 Key components:
